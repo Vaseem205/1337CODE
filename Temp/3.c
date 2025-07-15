@@ -20,13 +20,25 @@ int fun1(int* nums, int numsSize, int target){
     return cnt;
 }
 
+
+int fun2(int* arr, int size, int target){
+    int count = 0;
+    for(int i=0; i<size; i++){
+        if(arr[i]!=target){
+            arr[count] = arr[i];
+            count++;
+        }
+    }
+    return count;
+}
+
 int main(){
 
     int arr[] = {3,2,2,3};
     int size = sizeof(arr)/sizeof(int);
 
     int target = 3;
-    int value = fun1(arr, size, target);
+    int value = fun2(arr, size, target);
 
     for(int i=0; i<value; i++){
         printf("%d ",arr[i]);

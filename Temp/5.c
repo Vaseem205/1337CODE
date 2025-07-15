@@ -32,13 +32,29 @@ int searchInsert(int* nums, int numsSize, int target) {
     
 }
 
+int searchInsert1(int* nums, int numsSize, int target){
+    int index = -1;
+
+    for(int i=0; i<numsSize; i++){
+        if(nums[i]>target){
+            index = i;
+            return index;
+        }
+    }
+
+
+    
+}
+
+
+
 int main(){
 
     int arr[]= {1,3,5,6,8,9};
     int size = sizeof(arr)/sizeof(int);
-    int target = 4;
+    int target = 10;
 
-    int index = searchInsert(arr, size, target);
+    int index = searchInsert1(arr, size, target);
 
     printf("index: %d", index);
 

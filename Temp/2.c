@@ -18,13 +18,26 @@ int fun1(int* arr, int size){
     return cnt;
 }
 
+int fun2(int* arr, int size){
+    int count = 1;
+    for(int i =1; i<size; i++){
+        if(arr[i] != arr[i-1]){
+            arr[count] = arr[i];
+            count++;
+        }
+    }
+
+    return count;
+}
+
+
 int main(){
 
     int arr[] = {1, 1, 1 ,1, 2, 2, 3, 4, 4, 4, 5, 5, 6};
 
     int size = sizeof(arr)/sizeof(int);
 
-    int value = fun1(arr, size);
+    int value = fun2(arr, size);
 
     printf("size: %d\n", value);
 
